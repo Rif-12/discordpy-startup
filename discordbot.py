@@ -17,5 +17,12 @@ async def ping(ctx):
     await ctx.send('pong')
 
 
+client = discord.Client(activity=discord.Game(name='my game'))
+
+# or, for watching:
+activity = discord.Activity(name='my activity', type=discord.ActivityType.watching)
+client = discord.Client(activity=activity)
+    
+    
 token = getenv('DISCORD_BOT_TOKEN')
 bot.run(token)
